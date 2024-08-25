@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+:root{
+    background-color: #f0f5f5;
+    border: none;
+    --purple: #9933ff;
+}
+.sidebar-item {
+    transition: color 1s ease, filter 0.3s ease;
+  }
+  
+  .sidebar-item:hover {
+  
+    background-color: #f0f5f5; /* Change text color to black */
+  }
+  .sidebar-item .text:hover {
+    color: black;
+  }
+  .sidebar-item .icon:hover {
+    color: var(--purple); /* Change icon color to purple */
+  }
+  .sidebar-item .active {
+    color: black; /* Change text color to black when active */
+  }
+  
+  .sidebar-item .active .icon {
+    color: purple; /* Change icon color to purple when active */
+  }
+  .cancel-sidebar{
+    transition: rotate 1.5s ease;
+  }
+  .cancel-sidebar:hover{
+    transform: rotate (360deg);
+  }
+  .mobilesidebar{
+    animation: nav 1.5s ease-in-out;
+  }
+  @keyframes nav{
+    from{
+      transform: translateX(-200px)
+    }
+    to{
+      transform: translate(0px)
+    }
+  }
+  .filter{
+    color: white;
+    filter: invert(100%);
+  }
+  .header{
+    border-bottom: .01rem solid rgb(197, 197, 197);
+  }
+  @media (max-width: 767px){
+   :root{
+    padding: 1rem;
+   }
+   .social{
+    margin-top: -4rem;
+   }
+  }
