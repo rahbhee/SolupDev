@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Projectmarket = () => {
+
+const Projectmarket = ({pageTitle}) => {
   return (
-    <div>
-      Project market hh
-    </div>
+  <>
+   
+  </>
+   
   )
 }
 

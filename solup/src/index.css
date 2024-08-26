@@ -52,8 +52,10 @@ body{
     color: white;
     filter: invert(100%);
   }
-  .header{
+  .project{
     border-bottom: .01rem solid rgb(197, 197, 197);
+    margin-top: 2rem;
+    margin-bottom: 2rem;;
   }
   @media (max-width: 767px){
    :root{
@@ -61,5 +63,9 @@ body{
    }
    .social{
     margin-top: -4rem;
+    
+   }
+   .social i{
+  
    }
   }

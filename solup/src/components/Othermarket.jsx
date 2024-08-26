@@ -3,7 +3,7 @@ import React from 'react'
 const Othermarket = () => {
   return (
     <div>
-      othermarket
+      other market
     </div>
   )
 }
