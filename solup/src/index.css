@@ -57,15 +57,90 @@ body{
     margin-top: 2rem;
     margin-bottom: 2rem;;
   }
+  .stepone .logo{
+    width: 9rem;
+  }
+  .stepone h4{
+    border: 2px solid #2cd889;
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+    font-size: .75rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .stepone .line{
+    height: .1rem;
+    width: 8.5rem;
+    background-color: #2cd889;
+  }
+  .hero-images div{
+    height: 9rem;
+    width: 16rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .next{
+    background-color:#2cd889;
+  }
+  .title{
+    column-gap: 4.85rem;
+  }
+  .sign{
+    color: #2cd889;
+  }
+  .active{
+    background-color: #2cd889;
+    color: white;
+  }
   @media (max-width: 767px){
    :root{
     padding: 1rem;
    }
    .social{
     margin-top: -4rem;
-    
    }
-   .social i{
-  
-   }
+   .hero-images div{
+    height: 9rem;
+    width: 10rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
   }
+  .stepone .line{
+    height: .1rem;
+    width: 4.5rem;
+    background-color: #2cd889;
+  }
+  .title{
+    column-gap: 2.65rem;
+    font-size: .5rem;
+  }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1070px){
+    :root{
+     padding: 1rem;
+    }
+    .social{
+     margin-top: -4rem;
+    }
+    .hero-images div{
+     height: 9rem;
+     width: 10rem;
+     padding-bottom: 1rem;
+     border-radius: .5rem;
+   }
+   .stepone .line{
+     height: .1rem;
+     width: 4.5rem;
+     background-color: #2cd889;
+   }
+   .title{
+     column-gap: 2.65rem;
+     font-size: .5rem;
+   }
+   }

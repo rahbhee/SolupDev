@@ -53,7 +53,7 @@ const Sidebar = ({activeLink, setActiveLink, SIDEBAR_LINKS}) => {
                     onClick={() => setActiveLink(index)}
                     className={`sidebar-item text-gray-500 font-medium md:space-x-5 justify-between text-sm rounded-2xl py-2 px-5 hover ${
                       activeLink === index || (link.name === 'Project Market' && (location.pathname.includes('latest') || location.pathname.includes('trending')))
-                        ? 'text-purple-600' : ''
+                        ? '' : ''
                     }`}
                   >
                     <Link className='flex items-center justify-center md:justify-start' to={link.path}>

@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {useState} from 'react'
-import Layout from './components/layout';
+{/*import Layout from './components/layout';
 import Dashboard from './components/Dashboard'
 import Latest from './pages/LatestProject';
 import TrendingProject from './pages/TrendingProject';
@@ -9,17 +9,24 @@ import Othermarket from './components/Othermarket';
 import Portfolio from './components/Portfolio';
 import Wallet from './components/Wallet';
 import Settings from './components/Settings';
+import LatestProject from './pages/LatestProject';*/}
+
+import Signup from './Signup/Signup'
 import './App.css';
-import LatestProject from './pages/LatestProject';
+
 
 function App() {
-  const [toggle, setToggle] = useState(false);
+  {/*const [toggle, setToggle] = useState(false);
   
   const toggleMobile = () => {
     setToggle(!toggle)
-  }
+  }*/}
+  
   return (
-   <BrowserRouter>
+    <>
+    <Signup/>
+    </>
+   /*<BrowserRouter>
    <Routes>
     <Route path='/' element={<Layout toggle={toggle} toggleMobile={toggleMobile}/>}>
     <Route index element={<Dashboard/>}/>
@@ -31,8 +38,8 @@ function App() {
     <Route path='Wallet' element={<Wallet/>}/>
     <Route path='Settings' element={<Settings/>}/>
     </Route>
-   </Routes>
-   </BrowserRouter>
+   </Routes>*/
+   
   )
 }
 
