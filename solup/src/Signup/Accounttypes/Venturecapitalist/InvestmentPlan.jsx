@@ -2,6 +2,7 @@ import React from 'react'
 
 
 const InvestmentPlan = ({formData, onChange, errors}) => {
+
   return (
     <div  className='w-11/12'>
       <form
@@ -18,7 +19,7 @@ const InvestmentPlan = ({formData, onChange, errors}) => {
 
         <div className='flex form-div text-xs flex-col gap-2 w-10/12'>
           <div className='flex flex-col'>
-            <label htmlFor="Minimum Investment Size (USD/crypto)">Minimum INvestment Size (USD/crypto)</label>
+            <label htmlFor="Minimum Investment Size (USD/crypto)">Minimum Investment Size (USD/crypto)</label>
             <input
                type="text"
                id="minimumInvestment"
@@ -26,14 +27,15 @@ const InvestmentPlan = ({formData, onChange, errors}) => {
                value={formData.minimumInvestment || ''}
                onChange={onChange}
             />
+            
           </div>
 
           <div className='flex flex-col'>
-            <label htmlFor="Maximum Investment Size (USD/crypto)">Maximum INvestment Size (USD/crypto)</label>
+            <label htmlFor="Maximum Investment Size (USD/crypto)">Maximum Investment Size (USD/crypto)</label>
             <input
              type="text"
              id="maximumInvestment"
-             name="firmPosition"
+             name="maximumInvestment"
              value={formData.maximumInvestment || ''}
              onChange={onChange}
             />

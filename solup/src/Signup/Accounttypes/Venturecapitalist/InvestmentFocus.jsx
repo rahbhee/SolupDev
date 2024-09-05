@@ -77,9 +77,9 @@ const InvestmentFocus = ({formData, onChange, errors}) => {
               <label className='flex items-center'>
                 <input
                   type="radio"
-                  name="investmentFocus"
-                  value="global"
-                  checked={formData.investmentFocus === 'regional'}
+                  name="geographicFocus"
+                  value="regional"
+                  checked={formData.geographicFocus === 'regional'}
                   onChange={onChange}
                 />
                 Regional
@@ -87,9 +87,9 @@ const InvestmentFocus = ({formData, onChange, errors}) => {
               <label className='flex items-center'>
                 <input
                    type="radio"
-                   name="investmentFocus"
-                   value="regional"
-                   checked={formData.investmentFocus === 'country-specific'}
+                   name="geographicFocus"
+                   value="country-specific"
+                   checked={formData.geographicFocus=== 'country-specific'}
                    onChange={onChange}
                 />
                 Country-specific

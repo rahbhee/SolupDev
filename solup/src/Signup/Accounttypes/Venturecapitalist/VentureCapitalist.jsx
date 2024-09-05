@@ -3,7 +3,9 @@ import FirmSignup from './FirmSignup';
 import InvestmentFocus from './InvestmentFocus';
 import Teaminformation from './TeamINformation';
 import InvestmentPlan from './InvestmentPlan';
-
+import InvestmentPlan2 from './InvestmentPlan2';
+import SocialInfo from './SocialInfo';
+import TermsandConditions from './TermsandConditions';
 
 const VentureCapitalist = () => {
   const [currentStep, setCurrentStep] = useState(1); // 1 or 2
@@ -33,9 +35,20 @@ const VentureCapitalist = () => {
     maximumInvestment: '',
     investmentHorizon: '',
     expectedReturns: '',
-    token: ''
+    token: '',
+
+    uploadDiligenceQuestionare: '',
+    uploadNDA: '',
+    uploadFirmsCertification: '',
+    uploadFirmsStatement: '',
+
+    connectSocials: "",
+
+    ventureFirmPassword: '',
+    ventureFirmConfirmPassword: '',
   });
   const [errors, setErrors] = useState({}); // Store errors for both sections
+
 
   const validateFirmSignup = () => {
     const newErrors = {};
@@ -79,10 +92,33 @@ const VentureCapitalist = () => {
     return newErrors;
   };
 
+  const validateInvestmentPlan2 = () => {
+    const newErrors = {};
+    if (!formData.uploadDiligenceQuestionare) newErrors.uploadDiligenceQuestionare = 'uploadDiligenceQuestionare is required';
+    if (!formData.uploadNDA) newErrors.uploadNDA = 'uploadNDA is required';
+    if (!formData.uploadFirmsCertification) newErrors.uploadFirmsCertification = 'uploadFirmsCertification is required';
+    if (!formData.uploadFirmsStatement) newErrors.uploadFirmsStatement = 'uploadFirmsStatement is required';
+    return newErrors;
+  };
+
+  const validateSocialInfo = () => {
+    const newErrors = {};
+    if (!formData.connectSocials) newErrors.connectSocials = 'connectSocial is required';
+    return newErrors;
+  };
+
+  const validateTermsandConditions = () => {
+    const newErrors = {};
+    if (!formData.ventureFirmPassword) newErrors.ventureFirmPassword = 'ventureFirmPassword is required';
+    if (!formData.ventureFirmConfirmPassword) newErrors.ventureFirmConfirmPassword = 'ventureFirmConfirmPassword is required';
+    return newErrors;
+  };
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked, files } = e.target;
+    console.log("Input change detected:", name, type, files);
     setErrors({})
-    setFormData((prevData) => ({ ...prevData, [name]: type === 'checkbox' ? checked : value,
+    setFormData((prevData) => ({ ...prevData, [name]: type === 'checkbox' ? checked : type === 'file' ? files[0] : value,
     }));
   };
  
@@ -98,11 +134,18 @@ const VentureCapitalist = () => {
       newErrors = validateTeamInformation();
     } else if (currentStep === 4) {
       newErrors = validateInvestmentPlan();
+    }else if (currentStep === 5) {
+      newErrors = validateInvestmentPlan2();
+    }else if (currentStep === 6) {
+      newErrors = validateSocialInfo();
+    }
+    else if (currentStep === 7) {
+      newErrors = validateTermsandConditions();
     }
   
     if (Object.keys(newErrors).length === 0) {
       setErrors({}); // Clear errors
-      if (currentStep < 3) {
+      if (currentStep < 8) {
         setCurrentStep(currentStep + 1);
       } else {
         handleSubmit();
@@ -123,7 +166,7 @@ const VentureCapitalist = () => {
 
   return (
     <div className='items-center flex flex-col'>
-      
+
       {currentStep === 1 && (
         <FirmSignup formData={formData} onChange={handleChange} errors={errors} />
       )}
@@ -136,12 +179,21 @@ const VentureCapitalist = () => {
        {currentStep === 4 && (
         <InvestmentPlan formData={formData} onChange={handleChange} errors={errors} />
       )}
+       {currentStep === 5 && (
+        <InvestmentPlan2 formData={formData} onChange={handleChange} errors={errors} />
+      )}
+      {currentStep === 6 && (
+        <SocialInfo formData={formData} onChange={handleChange} errors={errors} />
+      )}
+      {currentStep === 7 && (
+        <TermsandConditions formData={formData} onChange={handleChange} errors={errors} />
+      )}
       <button
         type="button"
         onClick={handleNextStep}
         className='cursor-pointer flex rounded-sm text-sm mt-2 mb-2 px-16 py-2 next items-center text-white'
       >
-        {currentStep > 1 ? 'Next' : 'Submit'}
+        {currentStep < 7 ? 'Next' : 'Submit'}
       </button>
     </div>
   );
