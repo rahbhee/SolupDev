@@ -2,53 +2,67 @@ import React from 'react'
 import { useState } from 'react'
 import solup from '/solup.png'
 import StepOne from './stepone'
-import StepTwo from './StepTwo'
-import StepThree from './stepthree'
+import StepThree from './StepThree'
 import StepFour from './StepFour'
 
 const Steps = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [accountType, setAccountType] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   const renderStep = () => {
     switch (currentStep){
       case 1:
-        return <StepOne/>;
+        return <StepOne selectAccountType={selectAccountType} accountType={accountType}/>;
       case 2:
-        return <StepTwo/>;
+        return <StepThree selectAccountType={selectAccountType} accountType={accountType}/>;
       case 3:
-        return <StepThree/>;
-      case 4:
-        return <StepFour/>;
+        return <StepFour />;
       default:
         return <StepOne />;
     }
-  }
+  };
 
   const nextStep = () => {
-    setCurrentStep((prevstep) => Math.min(prevstep + 1, 4))
-  }
-  
+      if (!accountType) {
+        setShowAlert(true)
+        return;
+      }
+      setShowAlert(false);
+    setCurrentStep((prevStep) => Math.min(prevStep + 1, 4));
+  };
+
+
+  const selectAccountType = (type) => {
+    setAccountType(type)
+    setShowAlert(false)
+  };
 
   return (
     <div className='stepone text-xs items-center justify-center flex flex-col'>
        <img className='logo w-28 mb-4' src={solup} alt="" />
        <h3 className='text-gray-500 mb-4'>Four basic steps to creating your account.</h3>
+       {showAlert && (
+        <div className='alert mb-2 p-2 bg-red-500 text-white rounded'>
+          Please select an account type!
+        </div>
+      )}
        <div className='flex items-center'>
         <div className=' cursor-pointer flex flex-col items-center justify-center'>
-        <h4 className={`${currentStep === 1 ? 'active' : ''}`}>1</h4>
+        <h4 className={`${currentStep === 1 && !accountType ? 'active' : ''}`}>1</h4>
         </div>
         <div></div>
         <div className='line'></div>
-        <div className=' cursor-pointer flex flex-col items-center justify-center'>
-          <h4  className={`${currentStep === 2 ? 'active' : ''}`}>2</h4>
+        <div className='cursor-pointer flex flex-col items-center justify-center'>
+          <h4 className={`${currentStep  === 1 && accountType ? 'active' : ''}`}>2</h4>
         </div>
         <div className='line'></div>
         <div className='cursor-pointer flex flex-col items-center justify-center'>
-        <h4  className={`${currentStep === 3 ? 'active' : ''}`}>3</h4>
+        <h4  className={`${currentStep === 2 ? 'active' : ''}`}>3</h4>
         </div>
         <div className='line'></div>
        <div className=' cursor-pointer flex flex-col items-center justify-center'>
-       <h4 className={`${currentStep === 4 ? 'active' : ''}`}>4</h4>
+       <h4 className={`${currentStep === 3 ? 'active' : ''}`}>4</h4>
        </div>
    </div>
 
@@ -64,10 +78,10 @@ const Steps = () => {
 
 
    <div className='text-xs flex flex-col items-center'>
-        <div onClick={nextStep} className=' cursor-pointer flex rounded-sm text-sm mt-6 px-16 py-3 next items-center text-white'>
+    {currentStep === 1  ? <div onClick={nextStep} className=' cursor-pointer flex rounded-sm text-sm mt-6 px-16 py-3 next items-center text-white'>
           <h3>Next</h3>
           <i className="ml-2 fa-solid fa-arrow-right"></i>
-        </div>
+        </div> : ''}
         <h3 className='mt-2'>Already have an account? <span className='sign cursor-pointer'>Sign in</span></h3>
         <h3 className='mt-3'>Terms of use. Privacy policy</h3>
       </div>

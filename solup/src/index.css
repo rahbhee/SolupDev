@@ -10,6 +10,27 @@ body{
     border: none;
     --purple: #9933ff;
 }
+input,
+textarea
+ {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: .65rem;
+  line-height: .55rem;
+  color: black;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
 .sidebar-item {
     transition: color 1s ease, filter 0.3s ease;
   }
@@ -83,6 +104,9 @@ body{
     border-radius: .5rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
+  .hero-images div:hover{
+    cursor: pointer;
+  }
   .next{
     background-color:#2cd889;
   }
@@ -90,12 +114,67 @@ body{
     column-gap: 4.85rem;
   }
   .sign{
-    color: #2cd889;
+    color: var(--purple);
   }
   .active{
     background-color: #2cd889;
     color: white;
   }
+
+  .activeaccount{
+    border: 2px solid var(--purple);
+  }
+  .deactiveaccount{
+    border: none;
+  }
+  .stepthree{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .stepthree-h{
+    min-height: 23rem;
+  }
+  .form-div div{
+    border-bottom: 1px solid gray;
+    font-size: .65rem;
+  }
+  .form-title{
+    border-bottom: 3px solid var(--purple);
+    padding-bottom: 1px;
+  }
+  .select{
+    border: 1px solid gray;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 20%;
+    border: .15rem solid #2cd889;
+    position: relative;
+    cursor: pointer;
+    margin-left: .3rem;
+    margin-right: .1rem;
+  }
+ 
+  input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #2cd889;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .alert{
+    font-size: .65rem;
+  }
+
+
   @media (max-width: 767px){
    :root{
     padding: 1rem;
@@ -134,6 +213,9 @@ body{
      padding-bottom: 1rem;
      border-radius: .5rem;
    }
+   .left-side{
+    height: 100%;
+  }
    .stepone .line{
      height: .1rem;
      width: 4.5rem;

@@ -1,11 +1,14 @@
 import React from 'react'
+import Privateinvestor from './Accounttypes/PrivateInvestor'
 
-const StepFour = () => {
+const StepFour = ({accountType}) => {
+  
   return (
     <div>
-      step four
+      {accountType ? <Privateinvestor/> : ''}
+    step four
     </div>
   )
 }
 
-export default StepFour
+export default StepFour;
