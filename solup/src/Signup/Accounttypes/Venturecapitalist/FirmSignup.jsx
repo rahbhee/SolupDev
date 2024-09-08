@@ -39,6 +39,7 @@ const FirmSignup = ({ formData, onChange, errors }) => {
             value={formData.firmPhone || ''}
               onChange={onChange}
             />
+            {errors.firmPhone && <div className="text-red-500 text-xs">{errors.firmPhone}</div>}
           </div>
 
           <div className='flex flex-col'>
@@ -49,6 +50,7 @@ const FirmSignup = ({ formData, onChange, errors }) => {
               name="officialEmail"
               value={formData.officialEmail || ''}
               onChange={onChange}/>
+              {errors.officialEmail && <div className="text-red-500 text-xs">{errors.officialEmail}</div>}
           </div>
 
           <div className="relative flex items-center py-1 border-gray-500">

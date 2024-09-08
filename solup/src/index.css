@@ -32,6 +32,10 @@ input[type="file"] {
   position: absolute;
   z-index: -1;
 }
+.consent{
+  border: none;
+  font-size: .65rem;
+}
 .custom-file-upload {
   display: inline-block;
   padding: 6px 12px;
@@ -212,7 +216,13 @@ select:focus {
   .alert{
     font-size: .65rem;
   }
-
+  .modal{
+    width: 30rem;
+    height: 20rem;
+  }
+  .success{
+    color: #2cd889;
+  }
 
   @media (max-width: 767px){
    :root{

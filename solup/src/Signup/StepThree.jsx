@@ -1,5 +1,5 @@
 import React from 'react'
-import PrivateInvestor from './Accounttypes/PrivateInvestor'
+import PrivateInvestor from './Accounttypes/PrivateInvestor/PrivateInvestor'
 import BasicTrader from './Accounttypes/BasicTrader'
 import ProjectCreator from './Accounttypes/ProjectCreator'
 import VentureCapitalist from './Accounttypes/Venturecapitalist/VentureCapitalist'

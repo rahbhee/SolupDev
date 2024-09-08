@@ -15,7 +15,6 @@ const Signup = () => {
       <div className='stepone items-center justify-center flex flex-col'>
       <Steps/>
       </div>
-    
     </div>
   )
 }

@@ -47,6 +47,7 @@ const Teaminformation= ({formData, onChange, errors}) => {
              value={formData.email || ''}
              onChange={onChange}
             />
+             {errors.email && <div className="text-red-500 text-xs">{errors.email}</div>}
           </div>
 
 
@@ -59,6 +60,7 @@ const Teaminformation= ({formData, onChange, errors}) => {
               value={formData.phone  || ''}
               onChange={onChange}
             />
+             {errors.phone && <div className="text-red-500 text-xs">{errors.phone}</div>}
           </div>
 
           <div className='flex flex-col'>

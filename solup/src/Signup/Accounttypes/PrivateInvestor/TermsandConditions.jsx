@@ -28,35 +28,35 @@ const TermsandConditions= ({ formData, onChange, errors }) => {
         )}
 
         <div className='flex form-div text-xs flex-col gap-2 w-10/12'>
-          <div className='flex flex-col'>
-            <label htmlFor="ventureFirmName">Password</label>
+          <span className='flex flex-col'>
+            <label htmlFor="password">Password</label>
             <div className='flex'>
               <input
               type={showPassword ? 'text' : 'password'}
-              id="ventureFirmPassword"
-              name="ventureFirmPassword"
-              value={formData.ventureFirmPassword || ''}
+              id="password"
+              name="password"
+              value={formData.password || ''}
               onChange={onChange}
             />
             {showPassword ? <i onClick={togglePasswordVisibility} class="ml-auto fa-solid fa-eye-slash"></i> : <i onClick={togglePasswordVisibility} class="ml-auto fa-solid fa-eye"></i> }
             </div>
-             {errors.ventureFirmPassword && <div className="text-red-500 text-xs">{errors.ventureFirmPassword}</div>}
-          </div>
+             {errors.password && <div className="text-red-500 text-xs">{errors.password}</div>}
+          </span>
 
           <div className='flex flex-col'>
             <label htmlFor="firmPhone">Confirm Password</label>
-            <div className='flex'>
+            <span className='flex'>
             <input
               type={showConfirmPassword ? 'text' : 'password'}
-              id="ventureFirmConfirmPassword"
-              name="ventureFirmConfirmPassword"
-            value={formData.ventureFirmConfirmPassword || ''}
+              id="confirmPassword"
+              name="confirmPassword"
+            value={formData.confirmPassword || ''}
               onChange={onChange}
             />
             {showConfirmPassword ? <i onClick={toggleConfirmPasswordVisibility} class="ml-auto fa-solid fa-eye-slash"></i> : <i onClick={toggleConfirmPasswordVisibility} class="ml-auto fa-solid fa-eye"></i> }
-            </div>
+            </span>
            
-             {errors.ventureFirmConfirmPassword && <div className="text-red-500 text-xs">{errors.ventureFirmConfirmPassword}</div>}
+             {errors.confirmPassword && <div className="text-red-500 text-xs">{errors.confirmPassword}</div>}
           </div>
 
           <span className='flex consent flex-col'>
