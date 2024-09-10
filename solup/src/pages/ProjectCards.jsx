@@ -3,7 +3,7 @@ import web from '/web.jpg'
 
 const ProjectCards = () => {
   return (
-    <div className='flex cards rounded-lg md:pt-4 md:pl-4 md:pr-4 md:pb-16 p-2 pb-4 mb-4 bg-white items-center text-justify w-46  flex-col'>
+    <div className='flex mt-2 cards rounded-lg md:pt-4 md:pl-4 md:pr-4 md:pb-16 p-2 pb-4 mb-4 bg-white items-center text-justify w-46  flex-col'>
       <div>
       <img className='md:w-72 md:h-24 w-42 mb-4 rounded-lg' src={web} alt="" />
       <div className='flex mb-2 md:mb-4 items-center justify-item text-xs font-semibold'><h3 className='mr-2 text-gray-500'>By</h3><img src={web} className='w-4 mr-1 h-4 rounded-full' alt="" /><h3>Black Rock Web 3</h3></div>

@@ -40,7 +40,9 @@ input[type="file"] {
   cursor: pointer; 
   color:#2cd889;
 }
-
+.filter:hover{
+  cursor: pointer;
+}
 .custom-file-upload {
   display: inline-block;
   padding: 6px 12px;

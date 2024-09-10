@@ -22,9 +22,14 @@ const Latest = () => {
               </h4>
             </Link>
           </div>
-          <div className='flex p-2 mb-2 text-xs md:text-sm rounded-lg bg-purple-600 justify-between items-center'>
-            <img src={filter} className='mr-2 filter w-3' alt="filter-icon" />
-            <h4 className='text-white'>Filter Projects</h4>
+          <div className='flex cursor-pointer items-center'>
+            <div>
+            <i class="text-blue-800 p-2 h-8 w-8 rounded-lg bg-blue-100 fa-solid fa-magnifying-glass"></i>
+            </div>
+          <div className='flex  cursor-pointer p-1 py-2 ml-1 md:ml-2 text-xs md:text-sm rounded-lg bg-purple-600 justify-between items-center'>
+            <img src={filter} className='mr-2 filter cursor-pointer w-2 md:w-3' alt="filter-icon" />
+            <h4 className='text-white cursor-pointer'>Filter Projects</h4>
+          </div>
           </div>
         </div>
       </div>

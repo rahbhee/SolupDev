@@ -12,7 +12,7 @@ const Header = ({pageTitle, connect}) => {
   return (
   <div className='mb-6 header '>
 
-     <div className='flex md:flex-row flex-col flex-col-reverse md:items-center justify-between'>
+     <div className='flex md:flex-row flex-col mb-6 flex-col-reverse md:items-center justify-between'>
 
          <h1 className='text-xl mt-4 mb-4 md:mb-4 md:text-3xl font-medium'>{pageTitle}</h1>
 
@@ -57,15 +57,17 @@ const Header = ({pageTitle, connect}) => {
             <Link to='/latest'> <h4 className='md:mr-24 mr-4'>Latest Project</h4></Link>
             <Link to='/trending'><h4 className='md:ml-24'>Trending Project</h4></Link>
           </div>
-          <div className='flex items-center'>
-          <i class="text-blue-800 p-2 h-8 rounded-lg bg-blue-100 fa-solid fa-search"></i>
-          <div className='flex p-1 py-2 ml-1 md:ml-2 text-xs md:text-sm rounded-lg bg-purple-600 justify-between items-center'>
-            <img src={filter} className='mr-2 filter w-2 md:w-3' alt="filter-icon" />
-            <h4 className='text-white fi'>Filter Projects</h4>
+
+          <div className='flex cursor-pointer items-center'>
+            <div>
+            <i class="text-blue-800 p-2 h-8 w-10 rounded-lg bg-blue-100 fa-solid fa-magnifying-glass"></i>
+            </div>
+          <div className='flex filter cursor-pointer p-1 py-2 ml-1 md:ml-2 text-xs md:text-sm rounded-lg bg-purple-600 justify-between items-center'>
+            <img src={filter} className='mr-2 text-white cursor-pointer w-2 md:w-3' alt="filter-icon" />
+            <h4 className='text-white filter cursor-pointer'>Filter Projects</h4>
           </div>
           </div>
       </div>
-
     </div>
     )}
   </div>

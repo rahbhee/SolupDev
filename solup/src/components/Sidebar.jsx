@@ -38,8 +38,8 @@ const Sidebar = ({activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conne
     <>
       {windowWidth <=767 ? (<Mobilesidebar/>) :
       <>
-        <div className={`w-16 sidebar md:w-56 fixed main left-0 top-0 h-screen pl-0 md:pl-8 border-r pt-8 px-4 bg-white border-none`}>
-      <div className='mb-8 flex'>
+        <div className={`w-16 sidebar md:w-56 fixed main left-0 top-0 h-screen pl-0 md:pl-8 border-r pt-6 px-4 bg-white border-none`}>
+      <div className='mb-10 flex'>
         <img src={logo} alt="LOGO" className='w-28 sidebar-logo ml-2 md:flex'/>
       </div>
       <ul className='mt-16 ml-2 md:ml-0 space-y-6'>
@@ -69,7 +69,7 @@ const Sidebar = ({activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conne
                 );
               })}
             </ul>
-      <button onClick={connectWallet} className='align-center flex justify-center py-3 px-10 rounded-lg bg-purple-600 text-white text-xs'>
+      <button onClick={connectWallet} className='align-center flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs'>
       {!connect ? 'Connect Wallet' : 'Disconnect Wallet'}
       </button>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Projectmarket = ({pageTitle}) => {
+const Projectmarket = () => {
   return (
   <>
    project market
