@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Settings = () => {
+const SolUpBet = () => {
   return (
     <div>
-      Settings
+      SolUpBet
     </div>
   )
 }
 
-export default Settings
+export default SolUpBet;

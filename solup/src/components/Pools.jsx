@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Wallet = () => {
+const Portfolio = () => {
   return (
     <div>
-      Wallet
+      pools
     </div>
   )
 }
 
-export default Wallet
+export default Portfolio

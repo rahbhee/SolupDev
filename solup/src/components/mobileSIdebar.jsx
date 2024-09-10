@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '/solup.png'
-import upgrade from '/gopro.png'
+import Profile from '/profile.jpg'
 
 const Mobilesidebar = () => {
     const [toggle, setToggle] = useState(false);
@@ -28,7 +28,7 @@ const Mobilesidebar = () => {
       setActiveLink(activeIndex !== -1 ? activeIndex : 0);
     }, [location.pathname]);
   return (
-    <div>
+    <div className='flex justify-between items-center'>
       {toggle ?  <div className={`mobilesidebar w-50 fixed main left-0 top-0 h-screen border-r pt-8 px-4 bg-white border-none`}>
       <div className='mb-8 flex'>
         <img src={logo} alt="LOGO" className='w-28 sidebar-logo ml-2 md:flex'/>
@@ -47,10 +47,15 @@ const Mobilesidebar = () => {
         }
       </ul>
 
-      <div className='align-center flex justify-center pt-20 text-xs'>
-      <img className='w-30' src={upgrade} alt="" />
+      <div className='align-center flex justify-center py-3 mt-20 rounded-lg bg-purple-600 text-white text-xs'>
+      <h3>Connect</h3>
       </div>
-    </div> : <i onClick={toggleMobile} class="text-gray-500  text-2xl fa-solid fa-bars"></i>}
+    </div> : <i onClick={toggleMobile} class="text-gray-500  text-xl fa-solid fa-bars"></i>}
+
+    <div className='justify-center gap-2 items-center flex'>
+         <i class="text-purple-800 md:ml-6 p-2 rounded-lg bg-purple-200 fa-regular fa-bell"></i>
+         <img className='w-8 md:ml-6 rounded-3xl h-8' src={Profile} alt="profile" />
+         </div>
     </div>
   )
 }

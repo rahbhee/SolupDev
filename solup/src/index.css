@@ -36,6 +36,11 @@ input[type="file"] {
   border: none;
   font-size: .65rem;
 }
+.highlights div:hover{
+  cursor: pointer; 
+  color:#2cd889;
+}
+
 .custom-file-upload {
   display: inline-block;
   padding: 6px 12px;
@@ -64,9 +69,9 @@ input[type="file"] {
 }
 
 .fa-paperclip {
-
   cursor: pointer;
 }
+
 input:focus,
 button:focus,
 textarea:focus,
@@ -78,7 +83,6 @@ select:focus {
   }
   
   .sidebar-item:hover {
-  
     background-color: #f0f5f5;
   }
   .sidebar-item .text:hover {
@@ -111,6 +115,7 @@ select:focus {
       transform: translate(0px)
     }
   }
+  
   .filter{
     color: white;
     filter: invert(100%);
@@ -139,6 +144,9 @@ select:focus {
     width: 8.5rem;
     background-color: #2cd889;
   }
+  .pro{
+    border-color: #2cd889;
+  }
   .hero-images div{
     height: 9rem;
     width: 16rem;
@@ -162,7 +170,10 @@ select:focus {
     background-color: #2cd889;
     color: white;
   }
-
+  .search{
+    border: .1rem solid var(--purple);
+    margin-top: 1rem;
+  }
   .activeaccount{
     border: 2px solid var(--purple);
   }
@@ -187,6 +198,9 @@ select:focus {
   .select{
     border: 1px solid gray;
   }
+  .mobilesidebar{
+    z-index: 100;
+  }
 
   input[type="radio"] {
     appearance: none;
@@ -201,7 +215,19 @@ select:focus {
     margin-left: .3rem;
     margin-right: .1rem;
   }
- 
+  .desc{
+    width: 7.25rem;
+  }
+  .cards p{
+    font-size: .65rem;
+  }
+  .cards{
+    box-shadow: var(--purple) 0px 2px 4px 0px, var(--purple) 0px 0px 4px 0px;
+  }
+  .lines{
+    height: .2rem;
+  }
+  
   input[type="radio"]:checked::before {
     content: '';
     display: block;
@@ -217,20 +243,29 @@ select:focus {
     font-size: .65rem;
   }
   .modal{
-    width: 30rem;
-    height: 20rem;
+    width: 36rem;
+    height: auto;
+  }
+  .modal p{
+    font-size: .8rem;
+    width: 35rem;
   }
   .success{
     color: #2cd889;
   }
-
+  .green-line{
+    background-color: #2cd889;
+  }
+.fa-search{
+  z-index: 15;
+}
   @media (max-width: 767px){
    :root{
     padding: 1rem;
    }
-   .social{
-    margin-top: -4rem;
-   }
+   .highlights div{
+    padding: .2rem .5rem;
+  }
    .hero-images div{
     height: 9rem;
     width: 10rem;
@@ -246,15 +281,22 @@ select:focus {
     column-gap: 2.65rem;
     font-size: .5rem;
   }
+  .modal{
+    width: 18rem;
+    height: auto;
   }
-
+  .modal p{
+    font-size: .6rem;
+    width: 17rem;
+  }
+}
 
   @media (min-width: 768px) and (max-width: 1070px){
     :root{
      padding: 1rem;
     }
-    .social{
-     margin-top: -4rem;
+    .search{
+    margin-left: 4rem;
     }
     .hero-images div{
      height: 9rem;

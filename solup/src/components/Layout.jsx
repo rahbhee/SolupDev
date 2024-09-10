@@ -1,7 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
-import Projectmarket from './projectMarket'
 import { Outlet } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect} from 'react'
@@ -13,13 +12,20 @@ const layout = () => {
   const [activeLink, setActiveLink] = useState('');
   const [currentProject, setCurrentProject] = useState('');
 
+  const [connect, setConnect] = useState(false);
+
+  const connectWallet = () => {
+    setConnect(!connect)
+  }
+
+
   const SIDEBAR_LINKS = [
-    {id:1, path: '/', name:'Dashboard', icons: <i className="fa-solid fa-house"></i>},
+    {id:1, path: '/explore', name:'Explore', icons: <i className="fa-solid fa-house"></i>},
     {id:2, path: '/projectmarket', name:'Project Market', icons: <i className="fa-solid fa-folder"></i>},
     {id:3, path: '/othermarket', name:'Other Market', icons: <i className="fa-solid fa-chart-line"></i>},
-    {id:4, path: '/portfolio', name:'Portfolio', icons: <i className="fa-solid fa-cube"></i>},
-    {id:5, path: '/wallet', name:'Wallet', icons: <i className="fa-solid fa-wallet"></i>},
-    {id:6, path: '/settings', name:'Settings', icons: <i className="fa-solid fa-gear"></i>},
+    {id:4, path: '/pools', name:'Pools', icons: <i class="fa-solid fa-sack-dollar"></i>},
+    {id:5, path: '/solupbet', name:'SolUpBet', icons: <i class="fa-solid fa-cube"></i>},
+    {id:6, path: '/portfolio', name:'Portfolio', icons: <i class="fa-solid fa-bullseye"></i>},
     {id:7, path: '/latest', name:'Project Market'},
     {id:8, path: '/trending', name:'Project Market'},
   ]
@@ -44,14 +50,13 @@ const layout = () => {
 
   return (
     <div className='md:flex'>
-      <Sidebar activeLink={activeLink} setActiveLink={setActiveLink} SIDEBAR_LINKS={SIDEBAR_LINKS}/>
-      <div className='main w-full mt-8  md:pl-8 md:mt-3 md:pr-8 ml-0 md:ml-56 '>
-        <Header pageTitle={currentPage} currentProject={currentProject}/>
-        <Projectmarket pageTitle={currentPage}/>
+      <Sidebar connectWallet={connectWallet} connect={connect} activeLink={activeLink} setActiveLink={setActiveLink} SIDEBAR_LINKS={SIDEBAR_LINKS}/>
+      <div className='main w-full mt-4  md:pl-1 lg:pl-8 md:mt-0 md:pr-8 ml-0 md:ml-56 '>
+        <Header connect={connect}  pageTitle={currentPage} currentProject={currentProject}/>
         <Outlet />
       </div>
     </div>
   )
 }
 
-export default layout
+export default layout;
