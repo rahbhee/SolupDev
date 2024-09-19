@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Settings = () => {
+const Loans = () => {
   return (
     <div>
-      portfolio
+      
     </div>
   )
 }
 
-export default Settings
+export default Loans

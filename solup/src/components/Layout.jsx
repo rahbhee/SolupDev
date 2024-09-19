@@ -26,8 +26,8 @@ const layout = () => {
     {id:4, path: '/pools', name:'Pools', icons: <i class="fa-solid fa-sack-dollar"></i>},
     {id:5, path: '/solupbet', name:'SolUpBet', icons: <i class="fa-solid fa-cube"></i>},
     {id:6, path: '/portfolio', name:'Portfolio', icons: <i class="fa-solid fa-bullseye"></i>},
-    {id:7, path: '/latest', name:'Project Market'},
-    {id:8, path: '/trending', name:'Project Market'},
+    {id:7, path: '/latest', name:''},
+    {id:8, path: '/trending', name:''},
   ]
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const layout = () => {
     <div className='md:flex'>
       <Sidebar connectWallet={connectWallet} connect={connect} activeLink={activeLink} setActiveLink={setActiveLink} SIDEBAR_LINKS={SIDEBAR_LINKS}/>
       <div className='main w-full mt-4  md:pl-1 lg:pl-8 md:mt-0 md:pr-8 ml-0 md:ml-56 '>
-        <Header connect={connect}  pageTitle={currentPage} currentProject={currentProject}/>
+        <Header connect={connect} connectWallet={connectWallet} pageTitle={currentPage} currentProject={currentProject}/>
         <Outlet />
       </div>
     </div>
