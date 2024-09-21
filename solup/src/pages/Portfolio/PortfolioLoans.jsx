@@ -1,7 +1,7 @@
 import React from 'react'
 import PortfolioNav from './PortfolioNav'
 
-const PortfolioPools = () => {
+const PortfolioLoans = () => {
   return (
     <div className='flex flex-col gap-2'>
     <PortfolioNav />
@@ -143,4 +143,4 @@ const PortfolioPools = () => {
   )
 }
 
-export default PortfolioPools;
+export default PortfolioLoans;

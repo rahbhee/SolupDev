@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import Explore from './components/Explore';
@@ -11,7 +11,9 @@ import SolUpBet from './pages/SolUpBet';
 import Portfolio from './pages/Portfolio/Portfolio';
 import PortfolioAll from './pages/Portfolio/PortfolioAll';
 import PortfolioBet from './pages/Portfolio/PortfolioBets';
-import  PortfolioProjects from './pages/Portfolio/PortfolioProjects';
+import PortfolioProjects from './pages/Portfolio/PortfolioProjects';
+import PortfolioPools from './pages/Portfolio/PortfolioPools';
+import PortfolioLoans from './pages/Portfolio/PortfolioLoans';
 import Modal from './components/Modal';
 import './App.css';
 
@@ -40,7 +42,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout toggle={toggle} toggleMobile={toggleMobile} />}>
-          <Route index element={<Explore />} /> 
+          <Route index element={<Explore />} />
           <Route path='latest' element={<LatestProject />} />
           <Route path='trending' element={<TrendingProject />} />
           <Route path='explore' element={<Explore />} />
@@ -48,25 +50,29 @@ function App() {
           <Route path='othermarket' element={<Othermarket />} />
           <Route path='pools' element={<Pools />} />
           <Route path='solupbet' element={<SolUpBet />} />
-          <Route path='portfolio' element={<Portfolio />} />
+          
+        
+          <Route path='portfolio' element={<Navigate to="/portfolioall" />} />
           <Route path='portfolioall' element={<PortfolioAll />} />
           <Route path='portfolioprojects' element={<PortfolioProjects />} />
           <Route path='portfoliobets' element={<PortfolioBet />} />
+          <Route path='portfoliopools' element={<PortfolioPools />} />
+          <Route path='portfolioloans' element={<PortfolioLoans />} />
         </Route>
       </Routes>
 
-      {/* Modal shown on first visit */}
+    
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div className='flex flex-col items-center px-10 pb-4 text-center justify-center modal'>
           <div className='flex bg-white items-center'>
             <img className='w-5/12 ml-12 h-3/7' src='/group91.png' alt="" />
             <img className='w-5/12 h-3/7' src='/ccc.jpg' alt="" />
-          </div> 
+          </div>
           <h1 className='font-semibold md:text-3xl  text-gray-700'>Welcome to SolUp</h1>
           <p className='mt-2'>Welcome to Solup, the world's first decentralized market driven by the latest trends and aesthetics...</p>
           <button onClick={handleCloseModal} className='align-center flex justify-center py-3 px-16 mt-4 md:mt-6 rounded-lg bg-purple-600 text-white text-xs'>
             Continue
-          </button>      
+          </button>
         </div>
       </Modal>
     </BrowserRouter>
