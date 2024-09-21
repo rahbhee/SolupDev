@@ -77,7 +77,7 @@ const Sidebar = ({ activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conn
           </ul>
           <button
             onClick={connectWallet}
-            className="align-center mt-8 flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs"
+            className="align-center mt-32 flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs"
           >
             {!connect ? 'Connect Wallet' : 'Disconnect Wallet'}
           </button>

@@ -8,7 +8,6 @@ import Projectmarket from './pages/Projectmarket';
 import Othermarket from './pages/Othermarket';
 import Pools from './components/Pools';
 import SolUpBet from './pages/SolUpBet';
-import Portfolio from './pages/Portfolio/Portfolio';
 import PortfolioAll from './pages/Portfolio/PortfolioAll';
 import PortfolioBet from './pages/Portfolio/PortfolioBets';
 import PortfolioProjects from './pages/Portfolio/PortfolioProjects';
