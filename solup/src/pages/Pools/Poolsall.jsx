@@ -1,13 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import Profile from '/profile.jpg';
 
-const Portfolio = () => {
+const Poolsall = () => {
     const location = useLocation();
-    
   return (
-    <div className=''>
-     <div className='bg-white items-center justify-center screen-h pr-4'>
+    <div>
+       <div className='bg-white items-center justify-center screen-h pr-4'>
       <div className='flex items-center'>
         <h1 className='align-center rounded-br-lg flex justify-center py-2 px-6 bg-purple-600 text-white text-xs'>General Pool</h1>
         <h1 className='ml-auto font-semibold'>Current price: <span className='font-normal text-xs text-green-400'>+30</span> <span className='three text-purple-600'> $300</span></h1>
@@ -51,9 +50,9 @@ const Portfolio = () => {
         <h1>Market Pools</h1>
       </div>
       <div className='ml-4 project flex text-xs text-gray-500 justify-between items-center'>
-        <div className='flex gap-40 justify-between'>
-        <Link to='/pools'>
-            <h4 className={`${location.pathname === 'pools' ? 'border-b-2 text-500-red mt-4 pro' : ''} `}>
+        <div className='flex md:gap-36 gap-10 justify-between'>
+        <Link to='/allpools'>
+            <h4 className={`${location.pathname === 'allpools' ? 'border-b-2 mt-4 pro' : ''} `}>
               All Pools
             </h4>
           </Link>
@@ -157,7 +156,7 @@ const Portfolio = () => {
       </div>
 
     </div>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Poolsall

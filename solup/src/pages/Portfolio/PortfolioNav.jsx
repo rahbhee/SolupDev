@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
 const PortfolioNav = () => {
-  const location = useLocation(); // useLocation to track the active route
+  const location = useLocation();
 
   return (
     <div className='project'>

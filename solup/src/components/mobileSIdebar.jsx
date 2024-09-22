@@ -13,21 +13,31 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
   };
 
   const SIDEBAR_LINKS = [
-    { id: 1, path: '/explore', name: 'Explore', icons: <i className="fa-solid fa-house"></i> },
-    // Exclude 'Project Market' for mobile view
-    { id: 2, path: '/othermarket', name: 'Other Market', icons: <i className="fa-solid fa-chart-line"></i> },
-    { id: 3, path: '/pools', name: 'Pools', icons: <i className="fa-solid fa-sack-dollar"></i> },
-    { id: 4, path: '/solupbet', name: 'SolUpBet', icons: <i className="fa-solid fa-cube"></i> },
-    { id: 5, path: '/portfolio', name: 'Portfolio', icons: <i className="fa-solid fa-bullseye"></i> },
-    { id: 6, path: '/latest', name: 'Project' },
-    { id: 7, path: '/trending', name: 'Project' },
-  ];
+    {id:1, path: '/explore', name:'Explore', icons: <i className="fa-solid fa-house"></i>},
+    {id:2, path: '/projectmarket', name:'Project Market', icons: <i className="fa-solid fa-folder"></i>},
+    {id:3, path: '/othermarket', name:'Other Market', icons: <i className="fa-solid fa-chart-line"></i>},
+    {id:4, path: '/pools', name:'Pools', icons: <i class="fa-solid fa-sack-dollar"></i>},
+    {id:5, path: '/solupbet', name:'SolUpBet', icons: <i class="fa-solid fa-cube"></i>},
+    {id:6, path: '/portfolio', name:'Portfolio', icons: <i class="fa-solid fa-bullseye"></i>},
+  ]
+
 
   useEffect(() => {
     const currentPath = location.pathname;
-    const activeIndex = SIDEBAR_LINKS.findIndex(link => link.path === currentPath);
-    setActiveLink(activeIndex !== -1 ? activeIndex : 0);
-  }, [location.pathname]);
+    
+    if (currentPath.includes('latest') || currentPath.includes('trending')) {
+      // Highlight "Explore" if the path is related to latest or trending
+      const exploreIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Explore');
+      setActiveLink(exploreIndex);
+    } else if (currentPath.includes('portfolio')) {
+      // Highlight "Portfolio" if the path is related to any portfolio sub-sections
+      const portfolioIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Portfolio');
+      setActiveLink(portfolioIndex);
+    } else {
+      const activeIndex = SIDEBAR_LINKS.findIndex(link => link.path === currentPath);
+      setActiveLink(activeIndex !== -1 ? activeIndex : 0);
+    }
+  }, [location.pathname, SIDEBAR_LINKS, setActiveLink]);
 
   // Filter out 'Project Market' links specifically for mobile view
   const filteredLinks = SIDEBAR_LINKS.filter(link => link.name !== 'Project');
@@ -38,7 +48,7 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
         <div className='mobilesidebar w-50 fixed main left-0 top-0 h-screen border-r pt-8 px-4 bg-white border-none'>
           <div className='mb-8 flex'>
             <img src={logo} alt="LOGO" className='w-28 sidebar-logo ml-2 md:flex'/>
-            <i onClick={toggleMobile} className="cancel-sidebar fa-solid text-purple-600 text-xl ml-20 fa-xmark"></i>
+            <i onClick={toggleMobile} className="cancel-sidebar fa-solid text-purple-600 text-xl cursor-pointer ml-20 fa-xmark"></i>
           </div>
           <ul className='mt-6 md:ml-0 space-y-6'>
             {filteredLinks.map((link, index) => (
@@ -58,7 +68,7 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
               </li>
             ))}
           </ul>
-          <button onClick={connectWallet} className='align-center flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs'>
+          <button onClick={connectWallet} className='align-center mt-32 flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs'>
       {!connect ? 'Connect Wallet' : 'Disconnect Wallet'}
       </button>
         </div>

@@ -263,6 +263,10 @@ select:focus {
 .side{
   border-right: 2px solid var(--purple);
 }
+.general{
+  border-bottom: 3.5px solid var(--purple);
+  
+}
 .bonk{
   width: 5.65rem;
 }
@@ -276,12 +280,34 @@ select:focus {
 .bonkpro {
   position: absolute; 
   top: 0; 
-  left: 0; /* Position the label to the top-left */
-  z-index: 1; /* Ensure it stays above other content */
+  left: 0;
 }
 .bonkmom {
   position: relative; /* Ensure the parent div is relative */
 }
+thead{
+  font-weight: normal;
+}
+th, td {
+  padding: 1rem;
+  text-align: center;
+}
+#table-wrapper {
+  position:relative;
+
+}
+#table-scroll {
+  overflow-x: auto;
+  margin-top: 20px;
+  font-size: .7rem;
+}
+#table-scroll {
+  max-width: 100%; /* Ensure it does not exceed the parent width */
+}
+.three{
+  font-size: 1.5rem;
+}
+
   @media (max-width: 767px){
    :root{
     padding: 1rem;

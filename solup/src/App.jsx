@@ -13,6 +13,9 @@ import PortfolioBet from './pages/Portfolio/PortfolioBets';
 import PortfolioProjects from './pages/Portfolio/PortfolioProjects';
 import PortfolioPools from './pages/Portfolio/PortfolioPools';
 import PortfolioLoans from './pages/Portfolio/PortfolioLoans';
+import Poolsall from './pages/Pools/Poolsall';
+import Poolsbet from './pages/Pools/Poolsbet';
+import Poolsproject from './pages/Pools/Poolsproject';
 import Modal from './components/Modal';
 import './App.css';
 
@@ -57,6 +60,11 @@ function App() {
           <Route path='portfoliobets' element={<PortfolioBet />} />
           <Route path='portfoliopools' element={<PortfolioPools />} />
           <Route path='portfolioloans' element={<PortfolioLoans />} />
+
+          <Route path='pools' element={<Navigate to="/pools" />} />
+          <Route path='allpools' element={<Poolsall />} />
+          <Route path='projectpools' element={<Poolsproject />} />
+          <Route path='betpools' element={<Poolsbet/>} />
         </Route>
       </Routes>
 

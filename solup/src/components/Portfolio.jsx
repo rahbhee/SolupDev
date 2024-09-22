@@ -1,8 +1,6 @@
 
-import PortfolioNav from './PortfolioNav'
+import PortfolioNav from '../pages/Portfolio/PortfolioNav'
 
-
-  
   const Portfolio = () => {
     
   return (
