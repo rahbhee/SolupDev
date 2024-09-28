@@ -35,7 +35,7 @@ const SolUpAllBets = () => {
               </div>
               <h3 className='font-semibold general w-max'>Description</h3>
               <h3>{bet.description}</h3>
-              <div 
+              <div
                 className="cursor-pointer m-auto mt-2 align-center w-full flex justify-center bg-purple-600 text-white text-sm py-1"
                 onClick={() => handlePlaceBet(bet.id)}
               >
