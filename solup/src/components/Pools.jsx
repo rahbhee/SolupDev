@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Profile from '/profile.jpg';
+import Man from '/man.jpg';
 
 const Portfolio = () => {
+
     const location = useLocation();
-    
+
   return (
     <div className=''>
      <div className='bg-white items-center justify-center screen-h pr-4'>
@@ -74,7 +75,7 @@ const Portfolio = () => {
       <div className='flex items-center'>
         <div className='flex items-center justify-center'>
         <h1 className='align-center rounded-br-lg text-xs flex justify-center py-2 px-6 bg-purple-600 text-white'>Project Pool</h1>
-        <img className='w-10 ml-2 rounded-3xl h-10' src={Profile} alt="profile" />
+        <img className='w-10 ml-2 rounded-3xl h-10' src={Man} alt="profile" />
         <h1 className='mt-2 general w-max'>Hamster Kombat Launch</h1>
         </div>
         <h1 className='ml-auto font-semibold'>Current price: <span className='font-normal text-xs text-green-400'>+30</span> <span className='three text-purple-600'> $300</span></h1>
@@ -117,7 +118,7 @@ const Portfolio = () => {
       <div className='flex items-center'>
         <div className='flex items-center justify-center'>
         <h1 className='align-center rounded-br-lg text-xs flex justify-center py-2 px-6 bg-purple-600 text-white'>Bet Pool</h1>
-        <img className='w-10 ml-2 rounded-3xl h-10' src={Profile} alt="profile" />
+        <img className='w-10 ml-2 rounded-3xl h-10' src={Man} alt="profile" />
         <h1 className='mt-2 general w-max'>Hamster Kombat Launch</h1>
         </div>
         <h1 className='ml-auto font-semibold'>Current price: <span className='font-normal text-xs text-green-400'>+30</span> <span className='three text-purple-600'> $300</span></h1>

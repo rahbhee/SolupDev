@@ -6,12 +6,10 @@ import { useLocation } from 'react-router-dom'
 import { useState, useEffect} from 'react'
 
 
-
 const layout = () => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState('');
   const [currentProject, setCurrentProject] = useState('');
-
   const [connect, setConnect] = useState(false);
 
   const connectWallet = () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import filter from '/filter.png';
 import ProjectCards from './ProjectCards';
+import trendingprojectdata from '../trendingprojectdata.json';
 
 const TrendingProject = () => {
   const location = useLocation();
@@ -57,10 +58,14 @@ const TrendingProject = () => {
 
       
       <div className='grid gap-2 lg:gap-6 grid-cols-2 lg:grid-cols-4'>
-        <ProjectCards />
-        <ProjectCards />
-        <ProjectCards />
-        <ProjectCards />
+      {trendingprojectdata.map((project) => (
+          <ProjectCards
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))}
       </div>
     </div>
   );

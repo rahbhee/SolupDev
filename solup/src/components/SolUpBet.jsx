@@ -1,9 +1,11 @@
 import React from 'react'
+import SolUpAllBets from '../pages/SolUp/SolUpAllBets';
+
 
 const SolUpBet = () => {
   return (
     <div>
-      SolUpBet
+      <SolUpAllBets/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import filter from '/filter.png';
+import latestProjectData from '../latestprojectdata.json';
 import ProjectCards from './ProjectCards';
 
 const Latest = () => {
@@ -55,10 +56,16 @@ const Latest = () => {
       </div>
 
       <div className='grid gap-2 lg:gap-6 grid-cols-2 lg:grid-cols-4'>
-        <ProjectCards />
-        <ProjectCards />
-        <ProjectCards />
-        <ProjectCards />
+      
+        {latestProjectData.map((project) => (
+          <ProjectCards
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))}
+      
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import TrendingProject from './components/TrendingProject';
 import Projectmarket from './pages/Projectmarket';
 import Othermarket from './pages/Othermarket';
 import Pools from './components/Pools';
-import SolUpBet from './pages/SolUpBet';
+import SolUpBet from './components/SolUpBet';
 import PortfolioAll from './pages/Portfolio/PortfolioAll';
 import PortfolioBet from './pages/Portfolio/PortfolioBets';
 import PortfolioProjects from './pages/Portfolio/PortfolioProjects';
@@ -18,6 +18,10 @@ import Poolsbet from './pages/Pools/Poolsbet';
 import Poolsproject from './pages/Pools/Poolsproject';
 import Modal from './components/Modal';
 import './App.css';
+import SolUpAllBets from './pages/SolUp/SolUpAllBets';
+import SolUpNewBets from './pages/SolUp/SolupNewbets';
+import SolUpTrendingBets from './pages/SolUp/SolUpTrendingBets';
+import SolupPlaceBet from './pages/SolUp/SolupPlaceBet';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -52,8 +56,7 @@ function App() {
           <Route path='othermarket' element={<Othermarket />} />
           <Route path='pools' element={<Pools />} />
           <Route path='solupbet' element={<SolUpBet />} />
-          
-        
+
           <Route path='portfolio' element={<Navigate to="/portfolioall" />} />
           <Route path='portfolioall' element={<PortfolioAll />} />
           <Route path='portfolioprojects' element={<PortfolioProjects />} />
@@ -65,6 +68,12 @@ function App() {
           <Route path='allpools' element={<Poolsall />} />
           <Route path='projectpools' element={<Poolsproject />} />
           <Route path='betpools' element={<Poolsbet/>} />
+
+          <Route path='solupbet' element={<Navigate to="/solupallbet" />} />
+          <Route path='solupallbet' element={<SolUpAllBets/>}/>
+          <Route path='soluptrendingbets' element={<SolUpTrendingBets/>}/>
+          <Route path='solupnewbets' element={<SolUpNewBets/>}/>
+          <Route path="/placebet/:betId" element={<SolupPlaceBet />} />
         </Route>
       </Routes>
 

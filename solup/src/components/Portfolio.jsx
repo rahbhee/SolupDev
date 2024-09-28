@@ -1,11 +1,10 @@
-
 import PortfolioNav from '../pages/Portfolio/PortfolioNav'
 
   const Portfolio = () => {
     
   return (
     <div>
-      <PortfolioNav/>
+      <PortfolioNav />
     </div>
   )
 }

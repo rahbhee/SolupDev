@@ -264,7 +264,7 @@ select:focus {
   border-right: 2px solid var(--purple);
 }
 .general{
-  border-bottom: 3.5px solid var(--purple);
+  border-bottom: 2px solid var(--purple);
   
 }
 .bonk{
@@ -307,7 +307,16 @@ th, td {
 .three{
   font-size: 1.5rem;
 }
+.solupbet h3{
+  font-size: .8rem;
+}
 
+.solupbet .green{
+  color: rgb(5, 236, 5);
+}
+.solupbet .red{
+  color: red;
+}
   @media (max-width: 767px){
    :root{
     padding: 1rem;
@@ -351,6 +360,12 @@ th, td {
     width: 3rem;
     height: 1.5rem;
    }
+   .solupbet h3 {
+    font-size: .65rem;
+  }
+  .solupbet h1 {
+    font-size: .75rem;
+  }
 }
 
   @media (min-width: 768px) and (max-width: 1070px){
@@ -382,4 +397,10 @@ th, td {
     width: 3rem;
     height: 1.5rem;
    }
+   .solupbet h3 {
+    font-size: .55rem;
+  }
+  .solupbet h1 {
+    font-size: .65rem;
+  }
    }

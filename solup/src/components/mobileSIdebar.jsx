@@ -19,28 +19,22 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
     {id:4, path: '/pools', name:'Pools', icons: <i class="fa-solid fa-sack-dollar"></i>},
     {id:5, path: '/solupbet', name:'SolUpBet', icons: <i class="fa-solid fa-cube"></i>},
     {id:6, path: '/portfolio', name:'Portfolio', icons: <i class="fa-solid fa-bullseye"></i>},
-  ]
-
+  ];
 
   useEffect(() => {
     const currentPath = location.pathname;
     
     if (currentPath.includes('latest') || currentPath.includes('trending')) {
-      // Highlight "Explore" if the path is related to latest or trending
       const exploreIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Explore');
       setActiveLink(exploreIndex);
     } else if (currentPath.includes('portfolio')) {
-      // Highlight "Portfolio" if the path is related to any portfolio sub-sections
       const portfolioIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Portfolio');
       setActiveLink(portfolioIndex);
     } else {
       const activeIndex = SIDEBAR_LINKS.findIndex(link => link.path === currentPath);
       setActiveLink(activeIndex !== -1 ? activeIndex : 0);
     }
-  }, [location.pathname, SIDEBAR_LINKS, setActiveLink]);
-
-  // Filter out 'Project Market' links specifically for mobile view
-  const filteredLinks = SIDEBAR_LINKS.filter(link => link.name !== 'Project');
+  }, [location.pathname]);
 
   return (
     <div className='flex justify-between items-center'>
@@ -51,7 +45,7 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
             <i onClick={toggleMobile} className="cancel-sidebar fa-solid text-purple-600 text-xl cursor-pointer ml-20 fa-xmark"></i>
           </div>
           <ul className='mt-6 md:ml-0 space-y-6'>
-            {filteredLinks.map((link, index) => (
+            {SIDEBAR_LINKS.map((link, index) => (
               <li
                 key={link.id}
                 onClick={() => setActiveLink(index)}
@@ -68,12 +62,18 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
               </li>
             ))}
           </ul>
-          <button onClick={connectWallet} className='align-center mt-32 flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs'>
-      {!connect ? 'Connect Wallet' : 'Disconnect Wallet'}
-      </button>
+          {/* Display "Connect Wallet" button if not connected */}
+          {!connect && (
+            <button
+              onClick={connectWallet}
+              className='align-center mt-32 flex justify-center py-3 px-8 rounded-lg bg-purple-600 text-white text-xs'
+            >
+              Connect Wallet
+            </button>
+          )}
         </div>
       ) : (
-        <i onClick={toggleMobile} className="text-gray-500 text-xl fa-solid fa-bars"></i>
+        <i onClick={toggleMobile} className="text-gray-500 cursor-pointer text-xl fa-solid fa-bars"></i>
       )}
 
       <div className='justify-center gap-2 items-center flex'>
