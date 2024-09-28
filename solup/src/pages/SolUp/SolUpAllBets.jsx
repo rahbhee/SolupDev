@@ -21,11 +21,11 @@ const SolUpAllBets = () => {
         <SolupBetNav />
       </div>
 
-      <div className='grid gap-10 md:grid-cols-2'>
+      <div className='grid gap-10 lg:grid-cols-2'>
         {solupbetdata.map((bet) => (
           <div key={bet.id} className='bg-white grid p-4 gap-4 grid-cols-12'>
-            <div className='col-span-5 bg-gray-200'>
-              <img src={bet.imageUrl} alt={bet.title} />
+            <div className='col-span-5 h-48 w-32 bg-gray-200'>
+              <img className='' src={bet.imageUrl} alt={bet.title} />
             </div>
             <div className='flex col-span-7 gap-2 flex-col'>
               <h1 className='general font-semibold w-max'>{bet.title}</h1>

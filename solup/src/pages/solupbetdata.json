@@ -11,7 +11,7 @@
     {
       "id": 2,
       "title": "Elon Musk vs Jeff Bezos",
-      "imageUrl": "path/to/image2.jpg",
+      "imageUrl": "/man.jpg",
       "longBet": "+20%",
       "shortBet": "-15%",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus veritatis soluta labore.",
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "title": "Bitcoin vs Ethereum",
-      "imageUrl": "path/to/image3.jpg",
+      "imageUrl": "/man.jpg",
       "longBet": "+50%",
       "shortBet": "-10%",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi magni earum repudiandae.",
@@ -29,7 +29,7 @@
     {
       "id": 4,
       "title": "Apple vs Samsung",
-      "imageUrl": "path/to/image4.jpg",
+      "imageUrl": "/man.jpg",
       "longBet": "+25%",
       "shortBet": "-20%",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ratione aliquam.",
