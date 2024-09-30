@@ -19,6 +19,11 @@ import PortfolioBet from './pages/Portfolio/PortfolioBets';
 import  PortfolioProjects from './pages/Portfolio/PortfolioProjects';
 import Modal from './components/Modal';
 import './App.css';
+import SolUpAllBets from './SolUpBet/SolUpAllBets';
+import SolUpNewBets from './SolUpBet/SolupNewbets';
+import SolUpTrendingBets from './pages/SolUpBet/SolUpTrendingBets';
+import SolupPlaceBet from './pages/SolUpBet/SolupPlaceBet';
+import Orderbook from './SolUpBet/orderbook';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -62,6 +67,13 @@ function App() {
           <Route path='portfolioall' element={<PortfolioAll />} />
           <Route path='portfolioprojects' element={<PortfolioProjects />} />
           <Route path='portfoliobets' element={<PortfolioBet />} />
+          <Route path='solupbet' element={<Navigate to="/solupallbet" />} />
+          <Route path='solupallbet' element={<SolUpAllBets/>}/>
+          <Route path='soluptrendingbets' element={<SolUpTrendingBets/>}/>
+          <Route path='solupnewbets' element={<SolUpNewBets/>}/>
+          <Route path="/placebet/:betId" element={<SolupPlaceBet />} />
+          <Route path="chart" element={<SolupPlaceBet />} />
+          <Route path="orderbook" element={<Orderbook />} />
         </Route>
       </Routes>
 
@@ -76,7 +88,7 @@ function App() {
           <p className='mt-2'>Welcome to Solup, the world's first decentralized market driven by the latest trends and aesthetics...</p>
           <button onClick={handleCloseModal} className='align-center flex justify-center py-3 px-16 mt-4 md:mt-6 rounded-lg bg-purple-600 text-white text-xs'>
             Continue
-          </button>      
+          </button>
         </div>
       </Modal>
     </BrowserRouter>
